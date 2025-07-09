@@ -3,6 +3,16 @@
 @custom-variant dark (&:is(.dark *));
 
 
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
 :root {
 	--background: oklch(0.162 0.032 264);
 	--foreground: oklch(0.97 0.01 255);
