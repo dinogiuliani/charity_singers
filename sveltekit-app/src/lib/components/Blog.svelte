@@ -15,7 +15,7 @@
 				<div class="space-y-20 lg:space-y-20">
 					<article class="relative isolate flex flex-col gap-8 lg:flex-row">
 						<div
-							class=" relative aspect-video sm:aspect-[2/1] lg:aspect-square lg:w-64 lg:shrink-0"
+							class=" relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0"
 						>
 							<img
 								src={mainImage ? urlFor(mainImage).url() : '/favicon.png'}

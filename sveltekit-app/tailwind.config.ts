@@ -1,13 +1,11 @@
-import { fontFamily } from 'tailwindcss/defaultTheme';
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-	darkMode: ['class'],
+	darkMode: ['class', ':global(.dark)'],
 	content: [
 		'./src/**/*.{html,js,svelte,ts}',
 		'./node_modules/svelte-lightbox-gallery/dist/*.svelte'
 	],
-	safelist: ['dark'],
 	theme: {
 		container: {
 			center: true,
@@ -56,9 +54,6 @@ const config: Config = {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
-			},
-			fontFamily: {
-				sans: [...fontFamily.sans]
 			}
 		}
 	}

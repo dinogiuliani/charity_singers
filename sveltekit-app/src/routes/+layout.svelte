@@ -35,10 +35,10 @@
 						<Logo
 							className="${$page.url.pathname === '/' || isMobile
 								? ' fill-red-500 '
-								: 'transition-all hover:transition-all fill-white hover:duration-[400ms] group-hover:fill-red-500'}"
+								: 'transition-all hover:transition-all fill-white hover:duration-400 group-hover:fill-red-500'}"
 							strokeStyle="${$page.url.pathname === '/' || isMobile
 								? ' stroke-red-500 fill-none '
-								: ' transition-all group-hover:stroke-red-500 fill-none hover:transition-all stroke-white hover:duration-[400ms]'}"
+								: ' transition-all group-hover:stroke-red-500 fill-none hover:transition-all stroke-white hover:duration-400'}"
 						/>
 					{/key}
 				</a>
@@ -49,7 +49,7 @@
 						<li
 							class="${$page.url.pathname === href
 								? ' text-red-500 '
-								: ' hover:text-red-500 hover:transition-all hover:duration-[400ms]'} inline-flex items-center px-1 pt-1"
+								: ' hover:text-red-500 hover:transition-all hover:duration-400'} inline-flex items-center px-1 pt-1"
 						>
 							<button class="group relative">
 								<a
@@ -62,7 +62,7 @@
 									<div
 										class={$page.url.pathname === href
 											? 'absolute -right-5 -top-4 scale-125'
-											: 'absolute -right-5 -top-4 rotate-[10deg] transition duration-300 group-hover:rotate-[0deg] group-hover:scale-125'}
+											: 'absolute -right-5 -top-4 rotate-10 transition duration-300 group-hover:rotate-[0deg] group-hover:scale-125'}
 									>
 										<div id="Note">
 											<Note className="h-14" fill="url(#gradient)" />
