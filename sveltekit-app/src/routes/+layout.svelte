@@ -138,7 +138,7 @@
 </nav>
 
 <main class="mx-auto mt-10 max-w-7xl overflow-hidden px-6 lg:mt-14 lg:px-8">
-	<slot />
+	{@render children?.()}
 </main>
 
 <footer>
