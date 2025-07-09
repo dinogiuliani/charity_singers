@@ -1,8 +1,8 @@
 <script lang="ts">
 	import '../app.css';
-	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { navItems } from '$lib/navbar';
+	import { page } from '$app/state';
 	import Note from '$lib/components/Note.svelte';
 	import Logo from '$lib/components/Logo.svelte';
 	import { dev } from '$app/environment';
@@ -17,7 +17,7 @@
 		isMobile = window.innerWidth <= 768;
 	});
 
-	let { children, data } = $props();
+	let { children } = $props();
 </script>
 
 <svelte:head>
@@ -29,12 +29,12 @@
 		<div class="flex h-16 items-center justify-between">
 			<div class="group flex shrink-0 md:pt-2">
 				<a href="/">
-					{#key $page.url.pathname}
+					{#key page.url.pathname}
 						<Logo
-							className="${$page.url.pathname === '/' || isMobile
+							className="${page.url.pathname === '/' || isMobile
 								? ' fill-red-500 '
 								: 'transition-all hover:transition-all fill-white hover:duration-400 group-hover:fill-red-500'}"
-							strokeStyle="${$page.url.pathname === '/' || isMobile
+							strokeStyle="${page.url.pathname === '/' || isMobile
 								? ' stroke-red-500 fill-none '
 								: ' transition-all group-hover:stroke-red-500 fill-none hover:transition-all stroke-white hover:duration-400'}"
 						/>
@@ -45,20 +45,20 @@
 				<ul class="flex space-x-10">
 					{#each navItems as { name, href }, i}
 						<li
-							class="${$page.url.pathname === href
+							class="${page.url.pathname === href
 								? ' text-red-500 '
 								: ' hover:text-red-500 hover:transition-all hover:duration-400'} inline-flex items-center px-1 pt-1"
 						>
 							<button class="group relative">
 								<a
-									id={$page.url.pathname === href ? '' : 'menuItem'}
+									id={page.url.pathname === href ? '' : 'menuItem'}
 									{href}
 									class="rounded-md px-3 py-2 text-sm font-medium"
 								>
 									{name}
 
 									<div
-										class={$page.url.pathname === href
+										class={page.url.pathname === href
 											? 'absolute -top-4 -right-5 scale-125'
 											: 'absolute -top-4 -right-5 rotate-10 transition duration-300 group-hover:scale-125 group-hover:rotate-[0deg]'}
 									>
