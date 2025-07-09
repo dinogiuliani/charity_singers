@@ -10,12 +10,8 @@
 
 	injectAnalytics({ mode: dev ? 'development' : 'production' });
 
-	let menu: boolean = false;
-	let isMobile: boolean = false;
-
-	function toggleMenu() {
-		menu = !menu;
-	}
+	let menu: boolean = $state(false);
+	let isMobile: boolean = $state(false);
 
 	onMount(() => {
 		isMobile = window.innerWidth <= 768;
@@ -86,7 +82,7 @@
 							class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 transition-all duration-300 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-none focus:ring-inset"
 							aria-controls="mobile-menu"
 							aria-expanded="false"
-							onclick={toggleMenu}
+							onclick={() => (menu = !menu)}
 						>
 							<span class="absolute -inset-0.5"></span>
 							<span class="sr-only">Open main menu</span>
@@ -120,7 +116,7 @@
 					<a
 						href="/"
 						class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
-						onclick={toggleMenu}
+						onclick={() => (menu = !menu)}
 					>
 						Home
 					</a>
@@ -128,7 +124,7 @@
 						<a
 							{href}
 							class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
-							onclick={toggleMenu}
+							onclick={() => (menu = !menu)}
 						>
 							{name}
 						</a>
