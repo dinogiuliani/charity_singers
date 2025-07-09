@@ -85,3 +85,9 @@ export interface Youtube {
 	title: string;
 	link: string;
 }
+
+export interface Gallery {
+	_type: 'photo';
+	_createdAt: string;
+	title: string;
+}

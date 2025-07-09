@@ -7,7 +7,8 @@ import {
 	Home,
 	Video,
 	About,
-	Contact
+	Contact,
+	Gallery
 } from '$lib/sanity/queries';
 
 // See https://kit.svelte.dev/docs/types#app
@@ -23,6 +24,7 @@ declare global {
 	type Video = Video;
 	type About = About;
 	type Contact = Contact;
+	type Gallery = Gallery;
 }
 
 export {};
